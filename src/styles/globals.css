@@ -1,0 +1,39 @@
+:root {
+  --max-width: 1440px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  --background-main: #1b191c;
+  --background-secondary: #eeeeee;
+  --font-black: #000000;
+  --font-lightblack: #1b191c;
+  --font-white: #f5f6f7;
+  --font-lightwhite: #dadada;
+  --color-accent: #f8d231;
+  --color-error: #c6a827;
+
+  --transition: all 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--background-main);
+}
+
+body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 12px;
+}
+
+a {
+  text-decoration: none;
+  color: var();
+}
+
+ul {
+  list-style-type: none;
+}

@@ -1,0 +1,41 @@
+.lead {
+  background-color: var(--background-secondary);
+  padding: 40px;
+
+  display: grid;
+  grid-template-columns: 1.5fr 2.5fr;
+  column-gap: 15%;
+  row-gap: 24px;
+  grid-template-areas:
+    'title form'
+    'subtitle form'
+    'terms form';
+}
+
+.lead__title {
+  grid-area: title;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 52px;
+}
+
+.lead__subtitle {
+  grid-area: subtitle;
+  font-size: 24px;
+}
+
+.lead__terms {
+  grid-area: terms;
+  font-size: 12px;
+  grid-row: 4;
+}
+
+.lead__link {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--font-lightblack);
+}
+
+.lead__input {
+  grid-row: span 4;
+}

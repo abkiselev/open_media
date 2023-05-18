@@ -1,0 +1,43 @@
+.input {
+  padding: 130px 0;
+}
+
+.input__title {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.input__wrapper {
+  margin-top: 20px;
+  display: flex;
+}
+
+.input__field {
+  width: 65%;
+  padding: 32px 16px;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  font-family: inherit;
+  font-weight: 300;
+}
+
+.input__field::placeholder {
+  transition: var(--transition);
+}
+
+.input__field:focus::placeholder {
+  opacity: 0;
+}
+
+.input__button {
+  padding: 30px;
+  background-color: var(--color-accent);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.input__button:hover {
+  opacity: 0.8;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/arrow.svg" />
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio Upload</title>
+  </head>
+
+  <body>
+    <main>
+      <section class="lead">
+        <h1 class="lead__title">Play any audio sources directly in the browser!</h1>
+
+        <p class="lead__subtitle">Without any restrictions for free</p>
+
+        <p class="lead__terms">
+          By uploading the audio file, you agree to our
+          <a href="/" class="lead__link">Terms of Service.</a>
+        </p>
+
+        <div id="root" class="lead__input">
+          <form class="input">
+            <p class="input__title">Insert the link</p>
+            <div class="input__wrapper">
+              <input class="input__field" type="text" placeholder="https://" />
+              <button class="input__button" type="button">
+                <img src="/arrow.svg" alt="Submit" />
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="about">
+        <div class="about__text">
+          <h2 class="about__title">How It Works</h2>
+          <p class="about__description">
+            Lorem Ipsum is a "fish" text often used in print and web design. Lorem Ipsum has been the standard "fish"
+            for Latin texts since the early 16th century. At that time, an unnamed printer created a large collection of
+            font sizes and shapes, using Lorem Ipsum for print samples.
+          </p>
+        </div>
+        <div class="about__schema">
+          <img class="about__img" src="/schema.svg" alt="Schema" />
+        </div>
+      </section>
+
+      <section class="requirements">
+        <h2 class="requirements__title">Technical requirements</h2>
+
+        <div class="requirements__tabs tabs">
+          <button class="tabs__tab tabs__tab_active" type="button">Own server</button>
+          <button class="tabs__tab" type="button">Amazon Instance</button>
+        </div>
+
+        <div class="requirements__content">
+          <div class="tabs-content tabs-content_active">
+            <ul class="tabs-content__column">
+              <li class="tabs-content__item">
+                <span>Own server</span>
+                <span>Unix/OSX + docker + nvidia-docker</span>
+              </li>
+              <li class="tabs-content__item">
+                <span>CPU</span>
+                <span>4 cores or more (e.g. intel core i5)</span>
+              </li>
+              <li class="tabs-content__item">
+                <span>Memory</span>
+                <span>16 GB RAM</span>
+              </li>
+            </ul>
+
+            <ul class="tabs-content__column">
+              <li class="tabs-content__item">
+                <span>Free space</span>
+                <span>100 GB of free space</span>
+              </li>
+              <li class="tabs-content__item">
+                <span>Graphics hardware</span>
+                <span>GPU: NVidia only 2Gb+</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tabs-content">
+            <ul class="tabs-content__column">
+              <li class="tabs-content__item">
+                <span>Instance</span>
+                <span>g4dn.xlarge</span>
+              </li>
+              <li class="tabs-content__item">
+                <span>GPU</span>
+                <span>1</span>
+              </li>
+              <li class="tabs-content__item">
+                <span>vCPUs</span>
+                <span>4</span>
+              </li>
+            </ul>
+
+            <ul class="tabs-content__column">
+              <li class="tabs-content__item">
+                <span>Memory</span>
+                <span>16 GB RAM</span>
+              </li>
+              <li class="tabs-content__item">
+                <span>Storage</span>
+                <span>125 GB</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/scripts/index.js"></script>
+  </body>
+</html>
