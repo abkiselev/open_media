@@ -1,0 +1,18 @@
+.loader {
+  position: absolute;
+  top: 0;
+
+  width: 50%;
+  height: 4px;
+  background: #ffffff;
+  animation: loader 1.5s infinite;
+}
+
+@keyframes loader {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}

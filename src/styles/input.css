@@ -1,5 +1,5 @@
 .input {
-  padding: 130px 0;
+  padding: 130px 0 110px;
 }
 
 .input__title {
@@ -20,6 +20,7 @@
   font-size: 24px;
   font-family: inherit;
   font-weight: 300;
+  border: 1px solid transparent;
 }
 
 .input__field::placeholder {
@@ -40,4 +41,9 @@
 
 .input__button:hover {
   opacity: 0.8;
+}
+
+.input__error {
+  padding-top: 8px;
+  min-height: 16px;
 }

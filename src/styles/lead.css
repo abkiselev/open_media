@@ -1,6 +1,7 @@
 .lead {
   background-color: var(--background-secondary);
   padding: 40px;
+  /* min-height: 490px; */
 
   display: grid;
   grid-template-columns: 1.5fr 2.5fr;

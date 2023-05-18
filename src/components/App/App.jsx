@@ -1,10 +1,16 @@
 import { useState } from 'react'
-// import './App.css'
+import InputField from '../InputField/InputField'
+import Player from '../Player/Player'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [url, setUrl] = useState('')
 
-  return <>dsf</>
+  console.log(url)
+  const handleSubmit = (value) => {
+    setUrl(value)
+  }
+
+  return <>{url ? <Player setUrl={setUrl} /> : <InputField onSubmit={handleSubmit} />}</>
 }
 
 export default App

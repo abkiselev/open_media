@@ -1,0 +1,88 @@
+.wrapper {
+  padding: 80px 0;
+  /* margin: auto 0; */
+}
+
+.back {
+  display: block;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 24px;
+  border: none;
+  background: none;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.widget {
+  max-width: 620px;
+  padding: 20px;
+  background-color: #cfd3d6;
+  position: relative;
+  overflow: hidden;
+}
+
+.play {
+  display: block;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  width: 40px;
+  height: 40px;
+}
+
+.progress {
+  margin-top: 50px;
+}
+
+.progress {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  background-color: #adacad;
+  height: 2px;
+  cursor: pointer;
+}
+
+.progress::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 12px;
+  left: 20px;
+  top: 105px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.addings {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clock {
+  font-weight: 400;
+  font-size: 12px;
+  color: #1b191c;
+}
+.volume {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 252px;
+  height: 2px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.volume::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 12px;
+  background-color: #000000;
+  cursor: pointer;
+}
