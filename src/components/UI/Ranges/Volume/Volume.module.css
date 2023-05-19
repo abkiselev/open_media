@@ -1,0 +1,17 @@
+.volume {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 252px;
+  height: 2px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.volume::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 12px;
+  background-color: #000000;
+  cursor: pointer;
+}

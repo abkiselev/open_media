@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import UseValidation from '../../hooks/useValidation'
 import styles from './InputField.module.css'
+import Error from '../Error/Error'
 
 const InputField = ({ onSubmit }) => {
   const { values, handleValues, errors, isValuesValid, setInitialValues } = UseValidation()
@@ -35,7 +36,7 @@ const InputField = ({ onSubmit }) => {
         <img className={`${styles.error_img} ${errors.url && styles._visible}`} src="/error.svg" alt="Error" />
       </div>
 
-      <p className={`${styles.error_text} ${errors.url && styles._visible}`}>{errors.url || ''}</p>
+      <Error error={errors.url || ''} />
     </form>
   )
 }

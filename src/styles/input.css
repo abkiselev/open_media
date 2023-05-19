@@ -47,3 +47,20 @@
   padding-top: 8px;
   min-height: 16px;
 }
+
+@media (max-width: 1024px) {
+  .input {
+    padding: 40px 0 24px;
+  }
+
+  .input__field {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .input__button {
+    height: 100%;
+    padding: 13px 12px 11px;
+    border: 1px solid var(--color-accent);
+  }
+}

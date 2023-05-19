@@ -36,3 +36,9 @@ a {
 ul {
   list-style-type: none;
 }
+
+@media (max-width: 1024px) {
+  body {
+    padding: 0;
+  }
+}

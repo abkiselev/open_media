@@ -32,3 +32,16 @@
 .about__img {
   width: 100%;
 }
+
+@media (max-width: 1024px) {
+  .about {
+    padding: 40px 12px 120px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about__title {
+    font-size: 36px;
+    line-height: 110%;
+  }
+}

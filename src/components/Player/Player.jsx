@@ -1,11 +1,16 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import styles from './Player.module.css'
 import Loader from '../Loader/Loader'
-import axios from 'axios'
 import { getTime } from '../../utils/getTime'
+import Volume from '../UI/Ranges/Volume/Volume'
+import Progress from '../UI/Ranges/Progress/Progress'
+import PlayButton from '../UI/Buttons/PlayButton/PlayButton'
+import BackButton from '../UI/Buttons/BackButton/BackButton'
+import Clock from '../Clock/Clock'
+import Error from '../Error/Error'
 
-const Player = ({ setUrl }) => {
-  const url = '../../src/assets/songs/macan-scirena-ivl-mp3.mp3'
+const Player = ({ setUrl, url }) => {
+  // const url = '../../src/assets/songs/macan-scirena-ivl-mp3.mp3'
   // const url = 'http://localhost:3000/src/assets/songs/macan-scirena-ivl-mp3.mp3'
   // const url = 'https://ru.drivemusic.me/pop_music/741759-aleks-ataman-amp-finik.finya-ojjojjojj-ty-govorila.html'
   // const url = 'https://mp3uks.ru/mp3/files/macan-scirena-ivl-mp3.mp3'
@@ -16,138 +21,88 @@ const Player = ({ setUrl }) => {
   // const url =
   //   'https://d.lalal.ai/media/split/ebf6a7a0-2d14-4761-a898-3fc2100fd6a8/bcd093a8-7cf1-4178-a7b1-9a9d00a5625e/no_vocals'
 
-  // const [audio, setAudio] = useState(null)
-
   const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState('')
   const [isPlaying, setIsPlaying] = useState(false)
   const [duration, setDuration] = useState(0)
   const [progress, setProgress] = useState(0)
   const [volume, setVolume] = useState(0.3)
 
-  const audio = useRef()
+  const audioRef = useRef()
 
   const handlePlay = () => {
     if (isPlaying) {
-      audio.current.pause()
+      audioRef.current.pause()
     } else {
-      audio.current.play()
+      audioRef.current.play()
     }
 
     setIsPlaying(!isPlaying)
   }
 
+  const handleOnEnded = () => {
+    setIsPlaying(false)
+    setProgress(0)
+  }
+
   const handleProgress = (value) => {
-    audio.current.currentTime = value
+    audioRef.current.currentTime = value
   }
 
   const handleVolume = (value) => {
-    audio.current.volume = value
-    setVolume(value)
+    audioRef.current.volume = +value
+    setVolume(+value)
   }
 
-  const onLoaded = (e) => {
+  const handleLoaded = (e) => {
     setDuration(e.target.duration)
-    audio.current.volume = volume
+    audioRef.current.volume = volume
+    setIsLoading(false)
+    handlePlay()
+  }
+
+  const handleError = (e) => {
+    setError(`Unable lo load resource... ${e.target.error.message}`)
     setIsLoading(false)
   }
 
   const handleBack = () => {
     if (isPlaying) {
-      audio.current.pause()
+      audioRef.current.pause()
     }
 
     setUrl('')
   }
 
-  // useEffect(() => {
-  //   getAudioBuffer1(url)
-  // }, [])
-
-  // useEffect(() => {
-  //   isPlaying && getAudioBuffer(url)
-  // }, [isPlaying])
-
-  // async function getAudioBuffer1() {
-  //   const res = await axios.get(url)
-  //   console.log(res)
-  // }
-
-  // function getAudioBuffer() {
-  //   // const audio1 = new Audio()
-  //   const context = new AudioContext()
-  //   const analyser = context.createAnalyser()
-
-  //   // метод URL.createObjectURL() создает DOMString, содержащий URL с указанием на объект, заданный как параметр
-  //   // он позволяет загружать файлы из любого места на жестком диске
-  //   // время жизни URL - сессия браузера
-  //   audio.current.src = url
-
-  //   // определяем источник звука
-  //   const source = context.createMediaElementSource(audio.current)
-
-  //   // подключаем к источнику звука анализатор
-  //   source.connect(analyser)
-
-  //   // подключаем к анализатору "выход" звука - акустическая система устройства
-  //   analyser.connect(context.destination)
-
-  //   // запускаем воспроизведение
-  //   // audio.current.play()
-  //   console.log(context)
-  // }
-
-  // console.log(progress)
-
   return (
     <section className={styles.wrapper}>
-      <button type="button" className={styles.back} onClick={handleBack}>
-        &larr; Back
-      </button>
+      <BackButton handleBack={handleBack} />
 
-      <div className={styles.widget}>
+      <div className={`${styles.widget} ${(isLoading || error) && styles._disabled}`}>
         {isLoading && <Loader />}
 
-        <button className={styles.play} onClick={handlePlay}>
-          {isPlaying ? <img src="/pause.svg" alt="Play" /> : <img src="/play.svg" alt="Play" />}
-        </button>
+        <PlayButton isPlaying={isPlaying} handlePlay={handlePlay} />
 
-        <input
-          className={styles.progress}
-          type="range"
-          name="progress"
-          id="progress"
-          min={0}
-          max={duration}
-          step={0.01}
-          value={progress}
-          onChange={(e) => handleProgress(e.target.value)}
-        />
+        <Progress duration={duration} progress={progress} handleProgress={handleProgress} />
 
         <div className={styles.addings}>
-          <span className={styles.clock}>{getTime(progress)}</span>
-
-          <input
-            className={styles.volume}
-            type="range"
-            name="volume"
-            id="volume"
-            min={0}
-            max={1}
-            step={0.1}
-            value={volume}
-            onChange={(e) => handleVolume(e.target.value)}
-          />
+          <Clock time={progress} />
+          <Volume volume={volume} handleVolume={handleVolume} />
         </div>
 
         <audio
-          ref={audio}
+          ref={audioRef}
           src={url}
-          onLoadedData={(e) => onLoaded(e)}
+          onLoadedData={(e) => handleLoaded(e)}
           onTimeUpdate={(e) => setProgress(e.target.currentTime)}
+          onEnded={handleOnEnded}
+          onError={(e) => handleError(e)}
         >
           Your brouser doesn't support the <code>audio</code>.
         </audio>
       </div>
+
+      <Error error={error} />
     </section>
   )
 }

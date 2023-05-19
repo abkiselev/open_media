@@ -1,0 +1,13 @@
+.error_text {
+  min-height: 16px;
+  padding-top: 8px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-error);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+._visible {
+  opacity: 1;
+}

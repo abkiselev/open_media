@@ -7,6 +7,7 @@
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
+  letter-spacing: -0.4px;
 }
 
 .tabs {
@@ -22,6 +23,7 @@
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
+  text-align: left;
   opacity: 0.4;
   border: none;
   border-bottom: 1px solid transparent;
@@ -87,4 +89,28 @@
 .tabs-content__item > span:last-child {
   flex: 2;
   white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .requirements {
+    padding: 0 12px;
+  }
+
+  .tabs-content__item {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tabs-content__item > span:first-child {
+    white-space: normal;
+  }
+
+  .tabs-content__item > span:last-child {
+    white-space: normal;
+  }
+
+  .tabs-content {
+    padding-bottom: 40px;
+    gap: 0;
+  }
 }

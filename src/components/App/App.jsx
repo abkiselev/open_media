@@ -5,12 +5,11 @@ import Player from '../Player/Player'
 function App() {
   const [url, setUrl] = useState('')
 
-  console.log(url)
   const handleSubmit = (value) => {
     setUrl(value)
   }
 
-  return <>{url ? <Player setUrl={setUrl} /> : <InputField onSubmit={handleSubmit} />}</>
+  return <>{url ? <Player setUrl={setUrl} url={url} /> : <InputField onSubmit={handleSubmit} />}</>
 }
 
 export default App

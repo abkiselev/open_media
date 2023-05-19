@@ -1,0 +1,24 @@
+.progress {
+  margin-top: 50px;
+}
+
+.progress {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  background-color: #adacad;
+  height: 2px;
+  cursor: pointer;
+}
+
+.progress::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 12px;
+  left: 20px;
+  top: 105px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+}
