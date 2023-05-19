@@ -16,7 +16,12 @@
       <section class="lead">
         <h1 class="lead__title">Play any audio sources directly in the browser!</h1>
 
-        <div id="root" class="lead__input">
+        <!--    WITH SSG    -->
+        <div id="root" class="lead__input"><!--app-html--></div>
+
+        <!--    WITHOUT SSG    -->
+
+        <!-- <div id="root" class="lead__input">
           <form class="input">
             <p class="input__title">Insert the link</p>
             <div class="input__wrapper">
@@ -27,7 +32,7 @@
             </div>
             <p class="input__error"></p>
           </form>
-        </div>
+        </div> -->
 
         <p class="lead__subtitle">Without any restrictions for free</p>
 
@@ -119,7 +124,8 @@
       </section>
     </main>
 
-    <script type="module" src="/src/main.jsx"></script>
+    <!-- <script type="module" src="/src/main.jsx"></script> -->
     <script type="module" src="/src/scripts/index.js"></script>
+    <script type="module" src="/src/entry-client.jsx"></script>
   </body>
 </html>
