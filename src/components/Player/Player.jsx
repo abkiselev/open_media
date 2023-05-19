@@ -10,17 +10,6 @@ import Clock from '../Clock/Clock'
 import Error from '../Error/Error'
 
 const Player = ({ setUrl, url }) => {
-  // const url = '../../src/assets/songs/macan-scirena-ivl-mp3.mp3'
-  // const url = 'http://localhost:3000/src/assets/songs/macan-scirena-ivl-mp3.mp3'
-  // const url = 'https://ru.drivemusic.me/pop_music/741759-aleks-ataman-amp-finik.finya-ojjojjojj-ty-govorila.html'
-  // const url = 'https://mp3uks.ru/mp3/files/macan-scirena-ivl-mp3.mp3'
-
-  // const url = 'https://c5.radioboss.fm:18084/stream'
-
-  // const url = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3'
-  // const url =
-  //   'https://d.lalal.ai/media/split/ebf6a7a0-2d14-4761-a898-3fc2100fd6a8/bcd093a8-7cf1-4178-a7b1-9a9d00a5625e/no_vocals'
-
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState('')
   const [isPlaying, setIsPlaying] = useState(false)
