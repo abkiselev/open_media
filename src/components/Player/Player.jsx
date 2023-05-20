@@ -1,13 +1,14 @@
-import { useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import styles from './Player.module.css'
 import Loader from '../Loader/Loader'
-import { getTime } from '../../utils/getTime'
 import Volume from '../UI/Ranges/Volume/Volume'
 import Progress from '../UI/Ranges/Progress/Progress'
 import PlayButton from '../UI/Buttons/PlayButton/PlayButton'
 import BackButton from '../UI/Buttons/BackButton/BackButton'
 import Clock from '../Clock/Clock'
 import Error from '../Error/Error'
+import { keyboardShortcuts } from '../../utils/keyboardShortcuts'
+import { useHotkeys } from '../../hooks/useHotKeys'
 
 const Player = ({ setUrl, url }) => {
   const [isLoading, setIsLoading] = useState(true)
@@ -18,6 +19,15 @@ const Player = ({ setUrl, url }) => {
   const [volume, setVolume] = useState(0.3)
 
   const audioRef = useRef()
+
+  // const handleHotKeys = useCallback((e)=>keyboardShortcuts(e.key, ), [])
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleHotKeys)
+    console.log('useEffect')
+
+    return () => document.removeEventListener('keydown', handleHotKeys)
+  }, [handleHotKeys])
 
   const handlePlay = () => {
     if (isPlaying) {
@@ -62,6 +72,9 @@ const Player = ({ setUrl, url }) => {
 
     setUrl('')
   }
+
+  // const up = useHotkeys(['ArrowUp', 'Up'], () => handleVolume(volume + 0.1))
+  // console.log(volume)
 
   return (
     <section className={styles.wrapper}>

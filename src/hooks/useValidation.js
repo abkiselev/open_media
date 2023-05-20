@@ -37,7 +37,10 @@ function UseValidation() {
   }
 
   useEffect(() => {
-    if (Object.values(isValuesValid).every((i) => i === true) && Object.values(isValuesValid).length !== 0) {
+    if (
+      Object.values(isValuesValid).every((i) => i === true) &&
+      Object.values(isValuesValid).length !== 0
+    ) {
       setIsFormValid(true)
     } else {
       setIsFormValid(false)
@@ -46,7 +49,10 @@ function UseValidation() {
 
   function validateUrl(inputText) {
     if (!String(inputText).toLowerCase().match(urlRegexp) || inputText.length === 0) {
-      setErrors({ ...errors, url: 'Looks like there is an error in url. Make sure it starts with "https://"' })
+      setErrors({
+        ...errors,
+        url: 'Looks like there is an error in url. Make sure it starts with "https://"',
+      })
       setIsValuesValid({ ...isValuesValid, url: false })
     } else {
       setErrors({ ...errors, url: '' })

@@ -9,6 +9,10 @@ export const useHistoryStore = create(
         const currHistory = get().history
         console.log(currHistory)
 
+        if (currHistory.includes(url)) {
+          return
+        }
+
         if (currHistory.length === 7) {
           currHistory.pop()
         }
