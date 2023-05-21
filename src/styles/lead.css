@@ -38,6 +38,7 @@
 
 .lead__input {
   grid-row: span 4;
+  min-height: 420px;
 }
 
 @media (max-width: 1024px) {
@@ -59,4 +60,10 @@
     margin-bottom: 12px;
     letter-spacing: -0.4px;
   }
+
+  .lead__input {
+    grid-row: span 4;
+    min-height: fit-content;
+  }
+  
 }

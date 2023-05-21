@@ -1,3 +1,17 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.percent {
+  position: absolute;
+  bottom: 0;
+  background-color: #ffffff;
+  height: 2px;
+  pointer-events: none;
+}
+
 .progress {
   margin-top: 50px;
 }

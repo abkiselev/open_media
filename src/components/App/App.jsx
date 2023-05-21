@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import InputField from '../InputField/InputField'
 import Player from '../Player/Player'
 import { useHistoryStore } from '../../store/store'

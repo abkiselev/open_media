@@ -7,7 +7,6 @@ export const useHistoryStore = create(
       history: [],
       addToHistory: (url) => {
         const currHistory = get().history
-        console.log(currHistory)
 
         if (currHistory.includes(url)) {
           return

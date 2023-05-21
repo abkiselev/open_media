@@ -1,3 +1,16 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.percent {
+  position: absolute;
+  background-color: #000000;
+  height: 2px;
+  pointer-events: none;
+}
+
 .volume {
   appearance: none;
   -webkit-appearance: none;
@@ -15,3 +28,10 @@
   background-color: #000000;
   cursor: pointer;
 }
+
+@media (max-width: 1024px) {
+  .wrapper {
+    max-width: 170px;
+  }
+}
+

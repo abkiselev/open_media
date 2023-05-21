@@ -25,14 +25,6 @@
   line-height: 32px;
 }
 
-.about__schema {
-  flex: 1;
-}
-
-.about__img {
-  width: 100%;
-}
-
 @media (max-width: 1024px) {
   .about {
     padding: 40px 12px 120px;

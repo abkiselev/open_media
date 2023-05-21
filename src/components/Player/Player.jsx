@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from './Player.module.css'
 import Loader from '../Loader/Loader'
 import Volume from '../UI/Ranges/Volume/Volume'
@@ -7,12 +7,13 @@ import PlayButton from '../UI/Buttons/PlayButton/PlayButton'
 import BackButton from '../UI/Buttons/BackButton/BackButton'
 import Clock from '../Clock/Clock'
 import Error from '../Error/Error'
-import { keyboardShortcuts } from '../../utils/keyboardShortcuts'
 import { useHotkeys } from '../../hooks/useHotKeys'
+import Tooltip from '../Tooltip/Tooltip'
 
 const Player = ({ setUrl, url }) => {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState('')
+  const [isToolTipVisible, setIsToolTipVisible] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
   const [duration, setDuration] = useState(0)
   const [progress, setProgress] = useState(0)
@@ -20,14 +21,12 @@ const Player = ({ setUrl, url }) => {
 
   const audioRef = useRef()
 
-  // const handleHotKeys = useCallback((e)=>keyboardShortcuts(e.key, ), [])
-
   useEffect(() => {
-    document.addEventListener('keydown', handleHotKeys)
-    console.log('useEffect')
-
-    return () => document.removeEventListener('keydown', handleHotKeys)
-  }, [handleHotKeys])
+    if (isToolTipVisible) {
+      const timeout = setTimeout(() => setIsToolTipVisible(false), 1500)
+      return () => clearTimeout(timeout)
+    }
+  }, [isToolTipVisible])
 
   const handlePlay = () => {
     if (isPlaying) {
@@ -49,7 +48,7 @@ const Player = ({ setUrl, url }) => {
   }
 
   const handleVolume = (value) => {
-    audioRef.current.volume = +value
+    audioRef.current.volume = value
     setVolume(+value)
   }
 
@@ -62,6 +61,7 @@ const Player = ({ setUrl, url }) => {
 
   const handleError = (e) => {
     setError(`Unable lo load resource... ${e.target.error.message}`)
+    setIsToolTipVisible(true)
     setIsLoading(false)
   }
 
@@ -73,8 +73,19 @@ const Player = ({ setUrl, url }) => {
     setUrl('')
   }
 
-  // const up = useHotkeys(['ArrowUp', 'Up'], () => handleVolume(volume + 0.1))
-  // console.log(volume)
+  useHotkeys(
+    ['ArrowUp', 'Up'],
+    () => handleVolume(volume > 0.9 ? 1 : +(volume + 0.1).toFixed(1)),
+    volume
+  )
+  useHotkeys(
+    ['ArrowDown', 'Down'],
+    () => handleVolume(volume < 0.1 ? 0 : +(volume - 0.1).toFixed(1)),
+    volume
+  )
+  useHotkeys(['ArrowLeft', 'Left'], () => handleProgress(progress - 5), progress)
+  useHotkeys(['ArrowRight', 'Right'], () => handleProgress(progress + 5), progress)
+  useHotkeys([' '], handlePlay, isPlaying)
 
   return (
     <section className={styles.wrapper}>
@@ -105,6 +116,12 @@ const Player = ({ setUrl, url }) => {
       </div>
 
       <Error error={error} />
+
+      <Tooltip
+        isVisible={isToolTipVisible}
+        text={error}
+        setIsToolTipVisible={setIsToolTipVisible}
+      />
     </section>
   )
 }
