@@ -4,18 +4,18 @@
 
 ---
 
+**Деплой на Vercel:** [open-media-theta.vercel.app](https://open-media-theta.vercel.app/)\
 **Технологии:** React, Vite, Zustand, HTML, CSS, Vanilla JS\
 **Особенности:** SSG, custom Hooks, React внутри обычного html (с корректным отображением при отключенном в браузере JavaScript), верстка по макету Figma
 
 #### Базовая версия задания:
 
 - Ветка: [basic_version](https://github.com/abkiselev/open_media/tree/basic_version)
-- Деплой на Vercel: [https://open-media-theta.vercel.app/](https://open-media-theta.vercel.app/)
 
 #### Версия с дополнительными заданиями:
 
 - Ветка: [main](https://github.com/abkiselev/open_media/tree/main)
-- Деплой на GitHub Pages: [https://open-media-theta.vercel.app/](https://open-media-theta.vercel.app/)
+- Деплой на Vercel: [open-media-theta.vercel.app](https://open-media-theta.vercel.app/)
 - Добавил SSG
 - Добавил сохранение истории запросов (настроил максимально 7 элементов, можно менять в Store)
 - Добавил всплывающие уведомления (можно проверить вставив неработающую ссылку)
