@@ -55,16 +55,16 @@
 
 > ⚠️ Ограничений на использование сторонних библиотек, выбор стэйт менеджеров, css препроцессоров и сборщика не накладывается. > Результат необходимо сохранить в свой открытый репозиторий на github.
 
-\***\*Пример прямых ссылок для плеера:\*\***\
+**Пример прямых ссылок для плеера:**\
 Audio\
 [https://d.lalal.ai/media/split/ebf6a7a0-2d14-4761-a898-3fc2100fd6a8/bcd093a8-7cf1-4178-a7b1-9a9d00a5625e/no_vocals](https://d.lalal.ai/media/split/ebf6a7a0-2d14-4761-a898-3fc2100fd6a8/bcd093a8-7cf1-4178-a7b1-9a9d00a5625e/no_vocals)\
 [https://c5.radioboss.fm:18084/stream](https://c5.radioboss.fm:18084/stream)\
 [https://mp3uks.ru/mp3/files/macan-scirena-ivl-mp3.mp3](https://mp3uks.ru/mp3/files/macan-scirena-ivl-mp3.mp3)\
-[https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3](https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3)\
+[https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3](https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3)
 
 Video\
 [https://ia800300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4](https://ia800300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4)\
-[https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm](https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm)\
+[https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm](https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm)
 
 ##### Дополнительные задания (опционально):
 
