@@ -4,7 +4,7 @@
 
 ---
 
-**Технологии:** React, Vite, Zustand, HTML, CSS, Vanilla JS
+**Технологии:** React, Vite, Zustand, HTML, CSS, Vanilla JS\
 **Особенности:** SSG, custom Hooks, React внутри обычного html (с корректным отображением при отключенном в браузере JavaScript), верстка по макету Figma
 
 ##### Базовая версия задания:
@@ -43,12 +43,10 @@
 
 ##### Подробное описание и сценарий работы:
 
-\***\*Страница\*\***
-Сама страница представляет собой обычную _html_ страницу с _css_ стилями. Ее нужно реализовать без использования _React_. Она должна корректно отображаться, даже если выполнение _js_ на странице запрещено.
-В разделе “_Technical requirements_” реализовать переключение вкладок (табов) по клику на них. Если выполнение _js_ запрещено, то должна быть активна первая вкладка.
-
-\***\*Форма и плеер\*\***
-Форма ввода ссылки и плеер должны быть выполнены с помощью _React_.
+Страница: Сама страница представляет собой обычную _html_ страницу с _css_ стилями. Ее нужно реализовать без использования _React_. Она должна корректно отображаться, даже если выполнение _js_ на странице запрещено.
+В разделе “_Technical requirements_” реализовать переключение вкладок (табов) по клику на них. Если выполнение _js_ запрещено, то должна быть активна первая вкладка.\
+\
+Форма и плеер: Форма ввода ссылки и плеер должны быть выполнены с помощью _React_.
 В форме располагается поле ввода ссылки в формате “_https://_”. При некорректном вводе ссылки нужно отобразить ошибку, как указано на макете.
 При успешном вводе, скрывать форму и в этом же месте отобразить плеер с источником аудио из ссылки.
 При буферизации аудио потока отображать лоадер в виде бегущей линии. Пример анимации можно увидеть в прототипе компонента.
@@ -57,16 +55,16 @@
 
 > ⚠️ Ограничений на использование сторонних библиотек, выбор стэйт менеджеров, css препроцессоров и сборщика не накладывается. > Результат необходимо сохранить в свой открытый репозиторий на github.
 
-\***\*Пример прямых ссылок для плеера:\*\***
-Audio
-[https://d.lalal.ai/media/split/ebf6a7a0-2d14-4761-a898-3fc2100fd6a8/bcd093a8-7cf1-4178-a7b1-9a9d00a5625e/no_vocals](https://d.lalal.ai/media/split/ebf6a7a0-2d14-4761-a898-3fc2100fd6a8/bcd093a8-7cf1-4178-a7b1-9a9d00a5625e/no_vocals)
-[https://c5.radioboss.fm:18084/stream](https://c5.radioboss.fm:18084/stream)
-[https://mp3uks.ru/mp3/files/macan-scirena-ivl-mp3.mp3](https://mp3uks.ru/mp3/files/macan-scirena-ivl-mp3.mp3)
-[https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3](https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3)
+\***\*Пример прямых ссылок для плеера:\*\***\
+Audio\
+[https://d.lalal.ai/media/split/ebf6a7a0-2d14-4761-a898-3fc2100fd6a8/bcd093a8-7cf1-4178-a7b1-9a9d00a5625e/no_vocals](https://d.lalal.ai/media/split/ebf6a7a0-2d14-4761-a898-3fc2100fd6a8/bcd093a8-7cf1-4178-a7b1-9a9d00a5625e/no_vocals)\
+[https://c5.radioboss.fm:18084/stream](https://c5.radioboss.fm:18084/stream)\
+[https://mp3uks.ru/mp3/files/macan-scirena-ivl-mp3.mp3](https://mp3uks.ru/mp3/files/macan-scirena-ivl-mp3.mp3)\
+[https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3](https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3)\
 
-Video
-[https://ia800300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4](https://ia800300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4)
-[https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm](https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm)
+Video\
+[https://ia800300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4](https://ia800300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4)\
+[https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm](https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm)\
 
 ##### Дополнительные задания (опционально):
 
